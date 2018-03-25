@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="apple-touch-icon" href="tv.png">
+	<link rel="apple-touch-startup-image" href="launch.png">
+
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>Teleweb</title>
+
+	<style type="text/css">
+		body { background: black !important; }
+		.btn-space {margin-bottom: 10px;}
+		.btn:focus, .btn:active {
+		  outline: none !important;
+		  box-shadow: none !important;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container pt-2">
+
+		<div class="row pt-4 d-block d-sm-none">
+			<div class="col-auto mr-auto">
+				<button class="btn btn-lg btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">
+				<div class="text" id="senderknopf-sm">s-display</div>
+				</button>
+			</div>
+		</div>
+
+		<div class="row pt-4">
+			<div class="col-sm">
+				<video controls autoplay muted playsinline id="video" class="embed-responsive embed-responsive-16by9"></video>
+			</div>
+		</div>
+
+
+
+		<div class="row pt-4">
+			<div class="col-auto mr-auto d-none d-sm-block">
+				<button class="btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				<div class="text" id="senderknopf">xl-display</div>
+				</button>
+			</div>
+		
+			<div class="col-auto ml-auto">
+				<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+					<button id="runter" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-top"></span>&nbsp;</button>
+					<button id="mute-video" type="button" class="btn btn-lg bg-dark"><strike>Audio</strike></button>
+					<button id="hoch" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-bottom"></span>&nbsp;</button>
+				</div>
+			</div>
+			
+			<div class="col-1 ml d-none d-lg-block">
+				<button id="fullscreen" type="button" class="btn btn-lg btn-primary ">&nbsp;<span class="oi oi-fullscreen-enter"></span>&nbsp;</button>
+
+			</div>
+			
+			
+		</div>
+		
+		<div class="row pt-2">
+			<div class="col-sm">
+				<div class="collapse" id="collapseExample">
+					<div class="card bg-secondary">
+						<div class="card-body bg-dark channelList">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pt-2 d-none d-lg-block">
+			<div class="col-sm">
+					<small class="text-muted">Zappen: <b>+</b>/<b>-</b> | Audio: <b>M</b> | Vollbild: <b>F</b></small>
+			</div>
+		</div>
+
+</div>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="streams.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
