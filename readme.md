@@ -10,4 +10,4 @@ Steht eine Tastatur zur Verfügung, lässt sich zwischen den Sendern mit den Tas
 
 ## Demo
 - [Demo: Ausgabe und Code auf jsfiddle](https://jsfiddle.net/h2wnmqac/)
-- [Demo: Nur die Video-Ausgabe](embedded/result/)
+- [Demo: Nur die Video-Ausgabe](http://jsfiddle.net/h2wnmqac/embedded/result/)
