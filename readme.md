@@ -1,13 +1,12 @@
 ## Teleweb
-Teleweb ist eine schlichte Internetseite, die den einfachen und schnellen Zugriff auf das Live-Programm aller Öffentlich-Rechtlichen sowie auf die Auslandssender NHK, RT und Al Jazeera ermöglicht.
+Teleweb ist eine schlichte Internetseite, die den einfachen (Mobilgeräte-optimierten) Zugriff auf das Live-Programm der Öffentlich-Rechtlichen und eine Handvoll frei empfangbarer Privat- und Auslandssender ermöglicht. Safari-Nutzer auf iPad und Mac können die Bild-in-Bild-Funktion der Betriebsysteme nutzen. 
 
 ![](pics/desktop.jpg)
 
 ### Hotkeys
 Steht eine Tastatur zur Verfügung, lässt sich zwischen den Sendern mit den Tasten „+/-“ zappen, die Taste „M“ schaltet den Ton ein bzw. stumm, die Taste „F“ startet und verlässt die Vollbildansicht.
 
-![](pics/mobil.gif)
+![](pics/screen-teleweb.png)
 
 ## Demo
-- [Demo: Ausgabe und Code auf jsfiddle](https://jsfiddle.net/h2wnmqac/)
-- [Demo: Nur die Video-Ausgabe](http://jsfiddle.net/h2wnmqac/embedded/result/)
+- Eine aktuelle Live-Version lässt sich auf [https://telemat.1mb.site/](https://telemat.1mb.site/) begutachten.

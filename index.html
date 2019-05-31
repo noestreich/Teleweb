@@ -1,40 +1,70 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="de">
 <head>
-	
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-	<!-- Required meta tags -->
+	<script>
+		// edit for sort order 
+		var SenderListe = {
+			'ARD' : 'https://mcdn.daserste.de/daserste/de/master.m3u8',
+			'ZDF' : 'https://zdf1314-lh.akamaihd.net/i/de14_v1@392878/master.m3u8',
+            'ARTE' : 'https://artelive-lh.akamaihd.net/i/artelive_de@393591/master.m3u8',
+            'Phoenix' : 'https://zdf0910-lh.akamaihd.net/i/de09_v1@392871/master.m3u8',
+            '3sat' : 'https://zdf0910-lh.akamaihd.net/i/dach10_v1@392872/master.m3u8',
+            'RBB' : 'https://rbblive-lh.akamaihd.net/i/rbb_berlin@144674/master.m3u8',			
+			'NDR' : 'https://ndrfs-lh.akamaihd.net/i/ndrfs_hh@430231/master.m3u8',
+			'WDR' : 'https://wdrfsgeo-lh.akamaihd.net/i/wdrfs_geogeblockt@530016/master.m3u8',
+			'BR' : 'https://brlive-lh.akamaihd.net/i/bfsnord_germany@119898/master.m3u8',
+			'HR' : 'https://hrlive1-lh.akamaihd.net/i/hr_fernsehen@75910/master.m3u8',
+			'MDR' : 'https://mdrsnhls-lh.akamaihd.net/i/livetvmdrsachsen_de@513998/master.m3u8',
+			'SR' : 'https://srlive24-lh.akamaihd.net/i/sr_universal02@107595/master.m3u8',
+			'SWR' : 'https://swrbw-lh.akamaihd.net/i/swrbw_live@196738/master.m3u8',
+			'KiKa' : 'https://kikade-lh.akamaihd.net/i/livetvkika_de@450035/master.m3u8',
+			'ONE' : 'https://onelivestream-lh.akamaihd.net/i/one_livestream@568814/master.m3u8',
+			'alpha' : 'https://brlive-lh.akamaihd.net/i/bralpha_germany@119899/master.m3u8',
+			'Tagesschau24' : 'https://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8',
+			'ZDFinfo' : 'https://zdf1112-lh.akamaihd.net/i/de12_v1@392882/master.m3u8',
+			'ZDFneo' : 'https://zdf1314-lh.akamaihd.net/i/de13_v1@392877/master.m3u8',
+			'DW' : 'https://dwstream72-lh.akamaihd.net/i/dwstream72_live@123556/master.m3u8',
+            'NHK' : 'https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/global/263941/live_wa_s.m3u8',
+            'AlJazeera' : 'https://english.streaming.aljazeera.net/aljazeera/english2/index255.m3u8',
+			'RussiaToday' : 'https://rt-news.secure.footprint.net/1103.m3u8',
+            'Sport1' : 'https://1404752763.rsc.cdn77.org/QyhYDJ88WxQrIIjOYy3ZWA==,1559336479/ls-45420-1/index.m3u8',
+			'SkySportNews' : 'https://eventhlshttps-i.akamaihd.net/hls/live/263645/ssn-hd-https/indexvideo-3400.m3u8',
+			'TASTEMADE' : 'https://amagi-primary.akamaized.net/out/v1/3f7bf105c018444dbc8f74a3a283afaf/index.m3u8',
+			'DELUXE' : 'https://streaming-02.mivitec.net/live/smil:test.smil/playlist.m3u8',
+			'WELT' : 'https://live2weltcms-lh.akamaihd.net/i/Live2WeltCMS_1@444563/master.m3u8',
+			'PotsdamTV' : 'http://sdn-global-live-http-cache.3qsdn.com/live/_definst_/mp4:5654_9rRqfHQLh4Yd6pm/playlist.m3u8',
+			'AlexBerlin' : 'http://alex-stream.rosebud-media.de:1935/live/alexlivetv.smil/playlist.m3u8',
+			'ServusTV' : 'https://rbmn-live.akamaized.net/hls/live/2002830/geoSTVDEweb/master.m3u8'
+		};
+		
+		var SenderIndex = 0;
+		var SenderSelectors = [];
+		for(var Line in SenderListe){
+			SenderSelectors.push(Line);
+		}
+	</script>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<link rel="apple-touch-icon" href="tv.png">
-	<link rel="apple-touch-startup-image" href="launch.png">
-
-
-	<!-- Bootstrap CSS -->
+	<link rel="apple-touch-icon" href="https://via.placeholder.com/512/017bff/ffffff?text=TV">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
 	<title>Teleweb</title>
-
 	<style type="text/css">
 		body { background: black !important; }
 		.btn-space {margin-bottom: 10px;}
-		.btn:focus, .btn:active {
-		  outline: none !important;
-		  box-shadow: none !important;
-		}
+		.btn:focus, .btn:active { outline: none !important; box-shadow: none !important; }
 	</style>
-</head>
-
-<body>
+</head>	
+<body class="">
 
 	<div class="container pt-2">
-
 		<div class="row pt-4 d-block d-sm-none">
 			<div class="col-auto mr-auto">
-				<button class="btn btn-lg btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">
+				<button class="btn btn-lg btn-primary btn-block" type="button" data-toggle="collapse" data-target="#SenderPanel" aria-expanded="false">
 				<div class="text" id="senderknopf-sm">s-display</div>
 				</button>
 			</div>
@@ -42,63 +72,204 @@
 
 		<div class="row pt-4">
 			<div class="col-sm">
-				<video controls autoplay muted playsinline id="video" class="embed-responsive embed-responsive-16by9"></video>
+				<script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+				<video controls autoplay muted playsinline id="video" preload="auto" class="embed-responsive embed-responsive-16by9"></video>
 			</div>
 		</div>
 
-
-
-		<div class="row pt-4">
-			<div class="col-auto mr-auto d-none d-sm-block">
-				<button class="btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-				<div class="text" id="senderknopf">xl-display</div>
-				</button>
-			</div>
-		
-			<div class="col-auto ml-auto">
-				<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-					<button id="runter" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-top"></span>&nbsp;</button>
-					<button id="mute-video" type="button" class="btn btn-lg bg-dark"><strike>Audio</strike></button>
-					<button id="hoch" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-bottom"></span>&nbsp;</button>
-				</div>
-			</div>
-			
-			<div class="col-1 ml d-none d-lg-block">
-				<button id="fullscreen" type="button" class="btn btn-lg btn-primary ">&nbsp;<span class="oi oi-fullscreen-enter"></span>&nbsp;</button>
-
-			</div>
-			
-			
+	<div class="row pt-4">
+		<div class="col-auto mr-auto d-none d-sm-block">
+			<button class="btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#SenderPanel" aria-expanded="false" aria-controls="SenderPanel">
+				<div class="text" id="senderknopf">SENDER</div>
+			</button>
 		</div>
 		
-		<div class="row pt-2">
-			<div class="col-sm">
-				<div class="collapse" id="collapseExample">
-					<div class="card bg-secondary">
-						<div class="card-body bg-dark channelList">
-						</div>
+		<div class="col-auto ml-auto">
+			<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+				<button id="runter" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-top"></span>&nbsp;</button>
+				<button id="hoch" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-bottom"></span>&nbsp;</button>
+				<button id="mute-video" type="button" class="btn btn-secondary">&nbsp;<span id="mute-symbol" class="oi oi-volume-off"></span>&nbsp;</button>
+			</div>
+			<span id="PiPButtonSpan">
+			<button id="PiPButton" type="button" class="btn btn-lg btn-primary ">&nbsp;<span class="oi oi-external-link"></span>&nbsp;</button>
+			</span>
+		</div>
+		<div class="col-1 ml d-none d-lg-block">
+			<button id="fullscreen" type="button" class="btn btn-lg btn-primary ">&nbsp;<span class="oi oi-fullscreen-enter"></span>&nbsp;</button>
+		</div>
+	</div>
+		
+	<div class="row pt-2">
+		<div class="col-sm">
+			<div class="collapse" id="SenderPanel">
+				<div class="card bg-secondary">
+					<div class="card-body bg-dark">
+
+					
+					
+					
+					<p id="sender"></p>
+
+					            <script>
+                                var senderp = document.getElementById("sender");
+                                for (i = 0; i < SenderSelectors.length; i++) {
+						            senderp.innerHTML += ( "<button id='"+SenderSelectors[i]+"' type='button' class='btn btn-primary btn-space ' onclick='playTV("+i+");'>" + SenderSelectors[i] + "</button> "); 
+					                }
+                                
+                            
+                        
+                    </script>
+					
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="row pt-2 d-none d-lg-block">
-			<div class="col-sm">
-					<small class="text-muted">Zappen: <b>+</b>/<b>-</b> | Audio: <b>M</b> | Vollbild: <b>F</b></small>
-			</div>
+	<div class="row pt-2 d-none d-lg-block">
+		<div class="col-sm">
+			<small class="text-muted">Zappen: <b>+</b>/<b>-</b> | Ton: <b>M</b> | Vollbild: <b>F</b></small>
 		</div>
-
+	</div>
 </div>
 
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="streams.js"></script>
-    <script src="main.js"></script>
+	$(function() {
+	  $('button').click( function() {
+		$(this).addClass('active').siblings().removeClass('active');
+	  });
+	});
+	 
+	function playTV(Selector) {
+		SenderIndex = Selector;
+		if(Hls.isSupported()){
+			hls.loadSource(SenderListe[SenderSelectors[Selector]]); 
+			hls.attachMedia(video); 
+			hls.on(Hls.Events.MANIFEST_PARSED,function() { 
+			video.play();
+			});
+		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+			video.src = SenderListe[SenderSelectors[Selector]];
+			video.addEventListener('canplay',function() {
+			video.play();
+  			});
+		}
+		lauft(Selector)
+	}
 
-  </body>
+	function leise(e){
+		if((e.type == "keydown" && e.which == 77 ) ||(e.type == "click")){
+	  		if( $("video").prop('muted') ) {
+				$("video").prop('muted', false);
+				$('#mute-symbol').addClass('oi-volume-high').removeClass('oi-volume-off');
+				$('#mute-video').addClass('btn-primary').removeClass('btn-secondary');
+			} else {
+				$("video").prop('muted', true);
+				$('#mute-symbol').addClass('oi-volume-off').removeClass('oi-volume-high');
+				$('#mute-video').addClass('btn-secondary').removeClass('btn-primary');
+	  		}
+		}
+	}
+
+	function fullscreen() {
+	  var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
+		  (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
+		  (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
+		  (document.msFullscreenElement && document.msFullscreenElement !== null);
+	  var docElm = document.getElementById("video");
+	  if (!isInFullScreen) {
+		  if (docElm.requestFullscreen) {
+			  docElm.requestFullscreen();
+		  } else if (docElm.mozRequestFullScreen) {
+			  docElm.mozRequestFullScreen();
+		  } else if (docElm.webkitRequestFullScreen) {
+			  docElm.webkitRequestFullScreen();
+		  } else if (docElm.msRequestFullscreen) {
+			  docElm.msRequestFullscreen();
+		  }
+	  } else {
+		  if (document.exitFullscreen) {
+			  document.exitFullscreen();
+		  } else if (document.webkitExitFullscreen) {
+			  document.webkitExitFullscreen();
+		  } else if (document.mozCancelFullScreen) {
+			  document.mozCancelFullScreen();
+		  } else if (document.msExitFullscreen) {
+			  document.msExitFullscreen();
+		  }
+		}
+	}
+
+	function vollbild(e){
+		if((e.type == "keydown" && e.which == 70 )||(e.type == "click")){
+			fullscreen();
+		}
+	}
+
+	function lauft(Selector) {
+		SenderName = SenderSelectors[Selector];
+		$('#' + SenderName).addClass('active').siblings().removeClass('active');
+		$('#senderknopf').text(SenderName);
+		$('#senderknopf-sm').text(SenderName);
+	}	  
+	  
+	function hochschalten(e){
+	  if((e.type == "keydown" && (e.which == 187 || e.which == 107 || e.which == 171))||(e.type == "click")){
+			if(SenderIndex+1 == SenderSelectors.length ) {
+				SenderIndex = 0;
+			}else{
+				SenderIndex = SenderIndex+1;
+			}
+			playTV(SenderIndex); 
+		}
+	}
+
+	function runterschalten(e){
+	  if((e.type == "keydown" && (e.which == 189 || e.which == 109 || e.which == 173))||(e.type == "click")){
+			if(SenderIndex-1 < 0 ) {
+				SenderIndex = SenderSelectors.length-1;
+			}else{
+				SenderIndex = SenderIndex-1;
+			}
+			playTV(SenderIndex); 
+		}
+	}
+
+	$('body').keydown(hochschalten);
+	$('body').keydown(runterschalten);
+	$('body').keydown(vollbild);
+	$('body').keydown(leise);
+	$('#hoch').click(hochschalten);
+	$('#runter').click(runterschalten);
+	$('#fullscreen').click(vollbild);
+	$('#mute-video').click(leise);
+
+	var PiP = document.getElementById('PiPButton');
+	var isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|webOS|BlackBerry|IEMobile|Opera Mini)/i) || false;
+	var video = document.getElementById('video');
+	var hls = new Hls();
+	playTV(0);
+
+	if (isMobile[0] == 'iPad' || isMobile == false) {
+		// picture-in-picture
+		if (video.webkitSupportsPresentationMode && typeof video.webkitSetPresentationMode === "function") {
+			// Toggle PiP when the user clicks the button.
+			PiP.addEventListener("click", function(event) {
+				video.webkitSetPresentationMode(video.webkitPresentationMode === "picture-in-picture" ? "inline" : "picture-in-picture");
+			});
+		} else {
+			PiP.disabled = true;
+			$('#PiPButton').hide();
+		}
+	} else {
+		PiP.disabled = true;
+		$('#PiPButton').hide();
+	}
+</script>
+</body>
 </html>
