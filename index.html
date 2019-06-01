@@ -27,14 +27,11 @@
 			'NHK' : 'https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/global/263941/live_wa_s.m3u8',
 			'AlJazeera' : 'https://english.streaming.aljazeera.net/aljazeera/english2/index255.m3u8',
 			'RussiaToday' : 'https://rt-news.secure.footprint.net/1103.m3u8',
-			'Sport1' : 'https://1404752763.rsc.cdn77.org/QyhYDJ88WxQrIIjOYy3ZWA==,1559336479/ls-45420-1/index.m3u8',
 			'SkySportNews' : 'https://eventhlshttps-i.akamaihd.net/hls/live/263645/ssn-hd-https/indexvideo-3400.m3u8',
-			'TASTEMADE' : 'https://amagi-primary.akamaized.net/out/v1/3f7bf105c018444dbc8f74a3a283afaf/index.m3u8',
 			'DELUXE' : 'https://streaming-02.mivitec.net/live/smil:test.smil/playlist.m3u8',
 			'WELT' : 'https://live2weltcms-lh.akamaihd.net/i/Live2WeltCMS_1@444563/master.m3u8',
-			'PotsdamTV' : 'http://sdn-global-live-http-cache.3qsdn.com/live/_definst_/mp4:5654_9rRqfHQLh4Yd6pm/playlist.m3u8',
-			'AlexBerlin' : 'http://alex-stream.rosebud-media.de:1935/live/alexlivetv.smil/playlist.m3u8',
-			'ServusTV' : 'https://rbmn-live.akamaized.net/hls/live/2002830/geoSTVDEweb/master.m3u8'
+			'ServusTV' : 'https://rbmn-live.akamaized.net/hls/live/2002830/geoSTVDEweb/master.m3u8',
+            'TASTEMADE' : 'https://amagi-primary.akamaized.net/out/v1/3f7bf105c018444dbc8f74a3a283afaf/index.m3u8'	
 		};
 		
 		var SenderIndex = 0;
@@ -86,9 +83,9 @@
 		
 		<div class="col-auto ml-auto">
 			<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+				<button id="mute-video" type="button" class="btn btn-secondary">&nbsp;<span id="mute-symbol" class="oi oi-volume-off"></span>&nbsp;</button>
 				<button id="runter" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-top"></span>&nbsp;</button>
 				<button id="hoch" type="button" class="btn btn-primary">&nbsp;<span class="oi oi-chevron-bottom"></span>&nbsp;</button>
-				<button id="mute-video" type="button" class="btn btn-secondary">&nbsp;<span id="mute-symbol" class="oi oi-volume-off"></span>&nbsp;</button>
 			</div>
 			<span id="PiPButtonSpan">
 			<button id="PiPButton" type="button" class="btn btn-lg btn-primary ">&nbsp;<span class="oi oi-external-link"></span>&nbsp;</button>
@@ -128,7 +125,7 @@
 
 	<div class="row pt-2 d-none d-lg-block">
 		<div class="col-sm">
-			<small class="text-muted">Zappen: <b>+</b>/<b>-</b> | Ton: <b>M</b> | Vollbild: <b>F</b></small>
+			<small class="text-muted">Zappen: <kbd>+</kbd>/<kbd>-</kbd> | Ton: <kbd>M</kbd> | Vollbild: <kbd>F</kbd> | Sender: <kbd>S</kbd></small>
 		</div>
 	</div>
 </div>
@@ -222,8 +219,10 @@
 	  if((e.type == "keydown" && (e.which == 187 || e.which == 107 || e.which == 171))||(e.type == "click")){
 			if(SenderIndex+1 == SenderSelectors.length ) {
 				SenderIndex = 0;
+				video.pause();
 			}else{
 				SenderIndex = SenderIndex+1;
+				video.pause();
 			}
 			playTV(SenderIndex); 
 		}
@@ -233,17 +232,25 @@
 	  if((e.type == "keydown" && (e.which == 189 || e.which == 109 || e.which == 173))||(e.type == "click")){
 			if(SenderIndex-1 < 0 ) {
 				SenderIndex = SenderSelectors.length-1;
+				video.pause();
 			}else{
 				SenderIndex = SenderIndex-1;
+				video.pause();
 			}
 			playTV(SenderIndex); 
 		}
 	}
+    function zeigeSender(e) {
+        if(e.type == "keydown" && e.which == 83 ){
+        $('#SenderPanel').collapse('toggle');
+        }
+    }
 
 	$('body').keydown(hochschalten);
 	$('body').keydown(runterschalten);
 	$('body').keydown(vollbild);
 	$('body').keydown(leise);
+	$('body').keydown(zeigeSender);
 	$('#hoch').click(hochschalten);
 	$('#runter').click(runterschalten);
 	$('#fullscreen').click(vollbild);
